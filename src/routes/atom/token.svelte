@@ -11,6 +11,12 @@
 	function onMouseLeave() {
 		dispatch("hover", null);
 	}
+	function onClick() {
+		dispatch("click", null);
+	}
+	function onDblClock() {
+		dispatch("dblclick", null);
+	}
 	export let token: string;
 	export let hovered: boolean;
 	let isBr;
@@ -24,6 +30,7 @@
 	on:mouseleave={onMouseLeave}
 	on:focus={onMouseOver}
 	on:blur={onMouseLeave}
+	on:click={onClick}
 	class:hovered={hovered}
 	title={token}
 >

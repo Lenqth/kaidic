@@ -1,9 +1,12 @@
 
 import { writable } from 'svelte/store';
 
+export function toDictionaryList(text: string): (string[])[] {
+    return text?.split("\n").map( (row) => row.split(/\s+/))
+}
 export function toDictionary(text: string): { [key: string]: string } {
     let newDict = {} as { [key: string]: string }
-    text?.split("\n").map( (row) => row.split(/\s+/)).forEach(
+    toDictionaryList(text).forEach(
         ([k,v, ...args]) => {
             if (k == "") return;
             if (v == "") return;

@@ -1,7 +1,13 @@
-<script>
+<script lang="ts">
 	import TextSection from './section/TextSection.svelte';
 	import DictionarySection from './section/DictionarySection.svelte';
-</script>
+
+	let dictComponent: DictionarySection;
+
+	function dblClockWord(token: CustomEvent<string>) {
+		dictComponent.focusWord(token.detail)
+	}
+ </script>
 
 <svelte:head>
 	<title>Home</title>
@@ -9,8 +15,12 @@
 </svelte:head>
 
 <section>
-	<TextSection/>
-	<DictionarySection />
+	<TextSection
+		on:dblClickWord="{dblClockWord}"
+	/>
+	<DictionarySection 
+		bind:this={dictComponent}
+	/>
 </section>
 
 <style>
