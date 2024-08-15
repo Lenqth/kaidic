@@ -1,11 +1,11 @@
 <script lang="ts">
 	
-	import { tokens } from '../store';
+	import { tokens, toTokens } from '../store';
 
 	let text: string = localStorage.getItem("Kaidic_targetText") ?? "";
 	function setText (text: string) {
 		localStorage.setItem("Kaidic_targetText", text)
-		let newTokens = text.split(/\b/g);
+		let newTokens = toTokens(text);
 		tokens.set(newTokens);
 	}
 	$: setText(text)
