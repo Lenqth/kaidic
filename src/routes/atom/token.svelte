@@ -16,7 +16,6 @@
 	let isBr;
 	$: isBr = token.indexOf(".") >= 0;
 
-	let showToken = $dictionary[token] ?? token
 
 </script>
 
@@ -26,8 +25,9 @@
 	on:focus={onMouseOver}
 	on:blur={onMouseLeave}
 	class:hovered={hovered}
+	title={token}
 >
-	{showToken}
+	{($dictionary)[token] ?? token}
 </span>
 {#if isBr}
 	<br>	
