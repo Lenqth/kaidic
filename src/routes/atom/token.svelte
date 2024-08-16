@@ -32,6 +32,7 @@
 	on:blur={onMouseLeave}
 	on:click={onClick}
 	class:hovered={hovered}
+	class:translated={token in $dictionary}
 	title={token}
 >
 	{($dictionary)[token] ?? token}
@@ -49,5 +50,8 @@
 	}
 	.hovered {
 		background-color: lightpink;
+	}
+	.translated {
+		font-style: italic;
 	}
 </style>
