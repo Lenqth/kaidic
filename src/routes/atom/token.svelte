@@ -19,9 +19,7 @@
 	}
 	export let token: string;
 	export let hovered: boolean;
-	let isBr;
-	$: isBr = token.indexOf(".") >= 0;
-
+	export let searched: boolean;
 
 </script>
 
@@ -33,13 +31,11 @@
 	on:click={onClick}
 	class:hovered={hovered}
 	class:translated={token in $dictionary}
+	class:searched={searched}
 	title={token}
 >
 	{($dictionary)[token] ?? token}
 </span>
-{#if isBr}
-	<br>	
-{/if}
 
 <style>
 	span {
@@ -53,5 +49,8 @@
 	}
 	.translated {
 		font-style: italic;
+	}
+	.searched {
+		background-color: lightgreen;
 	}
 </style>
