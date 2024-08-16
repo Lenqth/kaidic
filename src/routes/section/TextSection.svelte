@@ -22,7 +22,8 @@
 
 	let sentences;
 
-	function match(text: string, target: string, searchType: SearchType): boolean {
+	function match(text: string, target: string, searchType: SearchType, noBlank: boolean = false): boolean {
+		if (target == "" && noBlank) return false;
 		switch(searchType) {
 			case "full":
 				return text === target
@@ -66,7 +67,7 @@
 			<Token
 				token={t}
 				hovered={hoveredWord===t} 
-				searched={match(t, searchText, searchType)}
+				searched={match(t, searchText, searchType, true)}
 				on:hover={onHover}
 				on:click={() => onDblClickWord(t)}
 			/>
