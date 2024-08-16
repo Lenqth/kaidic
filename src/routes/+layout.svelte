@@ -15,7 +15,7 @@
 	.app {
 		display: grid;
 		grid-template-rows: min-content 1fr;
-		min-height: 100vh;
+		height: 100vh;
 	}
 
 	main {
@@ -26,5 +26,6 @@
 		height: 100%;
 		margin: 0 auto;
 		box-sizing: border-box;
+		overflow: hidden;
 	}
 </style>
