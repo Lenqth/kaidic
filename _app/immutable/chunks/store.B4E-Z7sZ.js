@@ -1,2 +1,2 @@
-import{w as o}from"./index.BoE2zjD7.js";function e(t){return t==null?void 0:t.split(`
+import{w as o}from"./index.B7FKlpK2.js";function e(t){return t==null?void 0:t.split(`
 `).map(i=>i.split(/\s+/))}function c(t){let i={};return e(t).forEach(([r,n,...a])=>{r!=""&&n!=""&&(a.length>0||(i[r]=n))}),i}function s(t){return t.split(/\s?\b/g)}let l=localStorage.getItem("Kaidic_targetText")??"",u=localStorage.getItem("Kaidic_dict")??"";const g=o(s(l)),d=o(c(u));export{g as a,c as b,e as c,d,s as t};
